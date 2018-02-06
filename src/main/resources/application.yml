@@ -1,16 +1,16 @@
 #
 # The schedule for Complii Order Service job - 10 mins
 #
-# complii.order.service.job.fixed.rate:600000
-complii.order.service.job.fixed.rate: 30000
+# complii.order.service.job.fixed.delay.ms:600000
+complii.order.service.job.fixed.delay.ms: 30000
 
 #
 # The schedule for Complii Account Service job - 20 mins
 #
-complii.account.service.job.fixed.rate: 1200000
+complii.account.service.job.fixed.delay.ms: 1200000
 
 
 #
 # The schedule for Complii Holding Service job - 20 mins
 #
-complii.holding.service.job.fixed.rate: 1200000
+complii.holding.service.job.fixed.delay.ms: 1200000

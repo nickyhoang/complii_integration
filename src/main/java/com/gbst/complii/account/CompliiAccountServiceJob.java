@@ -47,7 +47,7 @@ public class CompliiAccountServiceJob {
         LOGGER.debug("Complii - limitNumberOfAccountsSentInBulkRequest = {}, compliiAccountQuery : {}", compliiAccountQuery);
     }
 
-    @Scheduled(fixedDelayString  = "${complii.account.service.job.fixed.rate}")
+    @Scheduled(fixedDelayString  = "${complii.account.service.job.fixed.delay.ms}")
     public void scheduleAccountTask() {
         startAccountCompliiService();
     }

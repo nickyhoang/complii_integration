@@ -48,7 +48,7 @@ public class CompliiHoldingServiceJob {
         LOGGER.debug("Complii - limitNumberOfHoldingsSentInBulkRequest = {}, compliiHoldingQuery : {}", limitNumberOfHoldingsSentInBulkRequest, compliiHoldingQuery);
     }
 
-    @Scheduled(fixedDelayString  = "${complii.holding.service.job.fixed.rate}")
+    @Scheduled(fixedDelayString  = "${complii.holding.service.job.fixed.delay.ms}")
     public void scheduleHoldingTask() {
         startHoldingCompliiService();
     }

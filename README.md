@@ -23,7 +23,11 @@ to where the batch process is run.
 
 The following is the list available parameters:
 
-1. datasource - contains the database connection parameters
+1. complii.order.service.job.fixed.delay.ms
+2. complii.account.service.job.fixed.delay.ms
+3. complii.holding.service.job.fixed.delay.ms
+
+The datasource - contains the database connection parameters is configured in the default application.properties
 
 
 **Development Notes**

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="no">
+
+    <bean name="foCompliiDataMapper" class="com.gbst.complii.dataMapper.FoCompliiDataMapper">
+        <property name="orderMappingMap">
+            <bean class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+                <property name="locations">
+                    <list>
+                        <value>classpath*:fo-complii-order-mapping-default.properties</value>
+                        <value>classpath*:fo-complii-order-mapping.properties</value>
+                    </list>
+                </property>
+            </bean>
+        </property>
+        <property name="accountMappingMap">
+            <bean class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+                <property name="locations">
+                    <list>
+                        <value>classpath*:fo-complii-account-mapping-default.properties</value>
+                        <value>classpath*:fo-complii-account-mapping.properties</value>
+                    </list>
+                </property>
+            </bean>
+        </property>
+        <property name="holdingMappingMap">
+            <bean class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+                <property name="locations">
+                    <list>
+                        <value>classpath*:fo-complii-holding-mapping-default.properties</value>
+                        <value>classpath*:fo-complii-holding-mapping.properties</value>
+                    </list>
+                </property>
+            </bean>
+        </property>
+    </bean>
+
+</beans>

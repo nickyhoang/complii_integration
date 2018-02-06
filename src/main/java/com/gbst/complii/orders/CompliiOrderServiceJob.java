@@ -48,8 +48,8 @@ public class CompliiOrderServiceJob {
         LOGGER.debug("Complii  - limitNumberOfOrdersSentInBulkRequest = {}, compliiOrderQuery : {}", compliiOrderQuery);
     }
 
-    @Scheduled(fixedDelay = 30000)
-    public void scheduleTaskUsingCronExpression() {
+    @Scheduled(fixedDelayString  = "${complii.order.service.job.fixed.rate}")
+    public void scheduleOrderTask() {
         startOrderCompliiService();
     }
 

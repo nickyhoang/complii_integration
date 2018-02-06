@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jmx.export.annotation.ManagedOperation;
 import org.springframework.jmx.export.annotation.ManagedResource;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.PostConstruct;
@@ -45,6 +46,11 @@ public class CompliiHoldingServiceJob {
         limitNumberOfHoldingsSentInBulkRequest = (String) configurationService.getValue(ConfigurationKey.COMPLII_LIMIT_OF_NUMBER_OF_HOLDING_RECORD_IN_BULK_REQUEST);
         retrieveQuery();
         LOGGER.debug("Complii - limitNumberOfHoldingsSentInBulkRequest = {}, compliiHoldingQuery : {}", limitNumberOfHoldingsSentInBulkRequest, compliiHoldingQuery);
+    }
+
+    @Scheduled(fixedDelayString  = "${complii.holding.service.job.fixed.rate}")
+    public void scheduleHoldingTask() {
+        startHoldingCompliiService();
     }
 
     @ManagedOperation

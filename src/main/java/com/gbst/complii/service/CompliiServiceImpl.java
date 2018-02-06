@@ -118,8 +118,7 @@ public class CompliiServiceImpl implements CompliiService {
     @Override
     public int sendOrder(CompliiOrder order) {
         LOGGER.debug("Complii - Sending this order : {}", order);
-        GenericType<Integer> type = new GenericType<Integer>() {
-        };
+        GenericType<Integer> type = new GenericType<Integer>() {};
         String method = apiResourceMap.get(ConfigurationKey.COMPLII_INTERNAL_POST_ORDER_RESOURCE.name());
         WebResource resource = client.resource(uriBuilder.clone().segment(method).build());
         String orderJsonRequest = compliiRequestMapper.mapSinglePostOrderRequest(order);
@@ -137,8 +136,7 @@ public class CompliiServiceImpl implements CompliiService {
     public OrderPostResult postOrder(CompliiOrder order) {
         try {
             LOGGER.debug("Complii - Posting this order : {}", order);
-            GenericType<String> type = new GenericType<String>() {
-            };
+            GenericType<String> type = new GenericType<String>() {};
             String method = apiResourceMap.get(ConfigurationKey.COMPLII_POST_ORDER_RESOURCE.name());
             WebResource resource = client.resource(uriBuilder.clone().segment(method).build());
             String orderJsonRequest = compliiRequestMapper.mapSinglePostOrderRequest(order);
@@ -162,8 +160,7 @@ public class CompliiServiceImpl implements CompliiService {
     @Override
     public boolean bulkPostOrder(List<CompliiOrder> orders) {
         LOGGER.debug("Complii - Posting {} order", orders.size());
-        GenericType<Boolean> type = new GenericType<Boolean>() {
-        };
+        GenericType<Boolean> type = new GenericType<Boolean>() {};
         String method = apiResourceMap.get(ConfigurationKey.COMPLII_BULK_POST_ORDER_RESOURCE.name());
         WebResource resource = client.resource(uriBuilder.clone().segment(method).build());
         String orderJsonRequest = compliiRequestMapper.mapBulkPostOrderRequest(orders);
@@ -181,8 +178,7 @@ public class CompliiServiceImpl implements CompliiService {
     public CompliiBulkPostTransactionResult bulkPostOrderTransaction(List<CompliiOrder> orders) {
         try {
             LOGGER.debug("Complii - Posting {} order using Bulk Post Order Transaction", orders.size());
-            GenericType<String> type = new GenericType<String>() {
-            };
+            GenericType<String> type = new GenericType<String>() {};
             String method = apiResourceMap.get(ConfigurationKey.COMPLII_BULK_POST_ORDER_TRANSACTION_RESOURCE.name());
             WebResource resource = client.resource(uriBuilder.clone().segment(method).build());
             String orderJsonRequest = compliiRequestMapper.mapBulkPostOrderRequest(orders);
@@ -207,8 +203,7 @@ public class CompliiServiceImpl implements CompliiService {
     public List<CompliiOrder> searchOrder(CompliiOrderSearch compliiOrderSearch) {
         try {
             LOGGER.debug("Complii - Searching order criteria: {} ", compliiOrderSearch);
-            GenericType<String> type = new GenericType<String>() {
-            };
+            GenericType<String> type = new GenericType<String>() {};
             String method = apiResourceMap.get(ConfigurationKey.COMPLII_SEARCH_ORDER_RESOURCE.name());
             WebResource resource = client.resource(uriBuilder.clone().segment(method).build());
             String searchOrderJsonRequest = compliiRequestMapper.mapSearchOrderRequest(compliiOrderSearch);
@@ -234,8 +229,7 @@ public class CompliiServiceImpl implements CompliiService {
     public AccountPostResult postAccount(CompliiAccount account) {
         try {
             LOGGER.debug("Complii - Posting this account : {}", account);
-            GenericType<String> type = new GenericType<String>() {
-            };
+            GenericType<String> type = new GenericType<String>() {};
             String method = apiResourceMap.get(ConfigurationKey.COMPLII_POST_ACCOUNT_RESOURCE.name());
             WebResource resource = client.resource(uriBuilder.clone().segment(method).build());
             String accountJsonRequest = compliiRequestMapper.mapSinglePostAccountRequest(account);
@@ -260,8 +254,7 @@ public class CompliiServiceImpl implements CompliiService {
     public BulkAccountPostResult bulkPostAccount(List<CompliiAccount> accounts) {
         try {
             LOGGER.debug("Complii - Posting this bulk account : {}", accounts);
-            GenericType<String> type = new GenericType<String>() {
-            };
+            GenericType<String> type = new GenericType<String>() {};
             String method = apiResourceMap.get(ConfigurationKey.COMPLII_BULK_POST_ACCOUNT_RESOURCE.name());
             WebResource resource = client.resource(uriBuilder.clone().segment(method).build());
             String accountJsonRequest = compliiRequestMapper.mapBulkPostAccountRequest(accounts);
@@ -286,8 +279,7 @@ public class CompliiServiceImpl implements CompliiService {
     public List<CompliiAccount> searchAccounts(CompliiAccountSearch compliiAccountSearch) {
         try {
             LOGGER.debug("Complii - Searching account criteria: {} ", compliiAccountSearch);
-            GenericType<String> type = new GenericType<String>() {
-            };
+            GenericType<String> type = new GenericType<String>() {};
             String method = apiResourceMap.get(ConfigurationKey.COMPLII_SEARCH_ACCOUNT_RESOURCE.name());
             WebResource resource = client.resource(uriBuilder.clone().segment(method).build());
             String searchAccountJsonRequest = compliiRequestMapper.mapSearchAccountRequest(compliiAccountSearch);
@@ -313,8 +305,7 @@ public class CompliiServiceImpl implements CompliiService {
     public HoldingPostResult postHoldings(CompliiHolding holding) {
         try {
             LOGGER.debug("Complii - Posting this holdings : {}", holding);
-            GenericType<String> type = new GenericType<String>() {
-            };
+            GenericType<String> type = new GenericType<String>() {};
             String method = apiResourceMap.get(ConfigurationKey.COMPLII_POST_HOLDING_RESOURCE.name());
             WebResource resource = client.resource(uriBuilder.clone().segment(method).build());
             String holdingJsonRequest = compliiRequestMapper.mapSinglePostHoldingRequest(holding);
@@ -339,8 +330,7 @@ public class CompliiServiceImpl implements CompliiService {
     public BulkHoldingPostResult bulkPostHoldings(List<CompliiHolding> holdings) {
         try {
             LOGGER.debug("Complii - Posting this bulk holdings : {}", holdings);
-            GenericType<String> type = new GenericType<String>() {
-            };
+            GenericType<String> type = new GenericType<String>() {};
             String method = apiResourceMap.get(ConfigurationKey.COMPLII_BULK_POST_HOLDING_RESOURCE.name());
             WebResource resource = client.resource(uriBuilder.clone().segment(method).build());
             String holdingJsonRequest = compliiRequestMapper.mapBulkPostHoldingRequest(holdings);
@@ -365,8 +355,7 @@ public class CompliiServiceImpl implements CompliiService {
     public List<CompliiHolding> searchHoldings(CompliiHoldingSearch compliiHoldingSearch) {
         try {
             LOGGER.debug("Complii - Searching holding criteria: {} ", compliiHoldingSearch);
-            GenericType<String> type = new GenericType<String>() {
-            };
+            GenericType<String> type = new GenericType<String>() {};
             String method = apiResourceMap.get(ConfigurationKey.COMPLII_SEARCH_HOLDING_RESOURCE.name());
             WebResource resource = client.resource(uriBuilder.clone().segment(method).build());
             String searchHoldingJsonRequest = compliiRequestMapper.mapSearchHoldingRequest(compliiHoldingSearch);

@@ -7,7 +7,12 @@ It currently contains the following jobs:
 1. Order Job
 2. Account Job
 3. Holding Job
-  
+
+**Presequisite**
+
+1. The trigger for shares table must have been executed (against the shares database), CD-1739-sharesTrigger.sql, prior to running this Complii Integration module.
+2. The configuration items has to be initialized by executing CD-1739.sql file against FO database prior to running this Complii Integration module
+
 **Running Batch Process**
 
 The following command:
